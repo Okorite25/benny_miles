@@ -115,7 +115,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating script badge */}
+          {/* Floating script badge
           <div
             className="absolute top-8 right-4 z-20 rotate-[-8deg] rounded-full px-5 py-3 font-script text-2xl shadow-lg"
             style={{
@@ -128,7 +128,7 @@ export default function Hero() {
             }}
           >
             ...originality is certain
-          </div>
+          </div> */}
         </div>
       </div>
 
