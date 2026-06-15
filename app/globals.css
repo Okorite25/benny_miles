@@ -1,26 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;600&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(0.16 0.04 45);
+  --foreground: #ededed;
+  --gold: #d4900a;
+  --amber: #f5a623;
+}
+
+@keyframes bounceName {
+  0%   { transform: translateY(-60px); opacity: 0; }
+  60%  { transform: translateY(10px); opacity: 1; }
+  80%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bounceRight {
+  0%   { transform: translateX(120px); opacity: 0; }
+  60%  { transform: translateX(-10px); opacity: 1; }
+  80%  { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatBokeh {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: var(--gold);
+  --color-amber: var(--amber);
+  --color-gold-soft: color-mix(in oklab, var(--gold) 60%, var(--foreground));
+  --color-surface: color-mix(in oklab, var(--background) 60%, #3d1a00);
+  --color-border: color-mix(in oklab, var(--gold) 20%, transparent);
+  --color-primary-foreground: #0a0400;
+  --font-display: "Bebas Neue", "Inter", sans-serif;
+  --font-script: "Caveat", cursive;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: radial-gradient(ellipse at 50% 0%, #2e1200 0%, #1a0900 60%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
